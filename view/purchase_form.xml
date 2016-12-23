@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/notebook/page[@id='purchase']/field[@name='payment_term']" position="after">
+        <label name="no_pagos"/>
+        <field name="no_pagos"/>
+        <newline/>
+        <label name="plazo1"/>
+        <field name="plazo1" xalign="0" xexpand="0"/>
+        <field name="plazo2" xalign="0" xexpand="0"/>
+        <field name="plazo3" xalign="0" xexpand="0"/>
+        <field name="plazo4" xalign="0" xexpand="0"/>
+        <newline/>
+    </xpath>
+</data>
