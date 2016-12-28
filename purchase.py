@@ -67,9 +67,11 @@ class Purchase():
             dias = self.plazo1
             lines= []
             name = "Pago " + str(dias) + " dias"
+
             terms = Term.search([('name','=', name)])
             if terms:
-                pass
+                for t in terms:
+                    term = t
             else:
                 term = Term()
                 term.name = name
@@ -83,13 +85,14 @@ class Purchase():
             dias2 = self.plazo2
             percentage = Decimal(50)
             lines= []
-            name = "Pago " + str(dias) + " " + str(dias2) + " dias"
+            name = "Pago " + str(dias) + " - " + str(dias2) + " dias"
             terms = Term.search([('name','=', name)])
 
             divisor = Decimal(str(round(100/percentage, 8)))
 
             if terms:
-                pass
+                for t in terms:
+                    term = t
             else:
                 term = Term()
                 term.name = name
@@ -108,13 +111,14 @@ class Purchase():
             dias3 = self.plazo3
             percentage = Decimal(33)
             lines= []
-            name = "Pago " + str(dias) + " " + str(dias2) + " " + str(dias3) + " dias"
+            name = "Pago " + str(dias) + " - " + str(dias2) + " - " + str(dias3) + " dias"
             terms = Term.search([('name','=', name)])
 
             divisor = Decimal(str(round(100/percentage, 8)))
 
             if terms:
-                pass
+                for t in terms:
+                    term = t
             else:
                 term = Term()
                 term.name = name
@@ -137,12 +141,13 @@ class Purchase():
             dias4 = self.plazo4
             percentage = Decimal(25)
             lines= []
-            name = "Pago " + str(dias) + " " + str(dias2) + " " + str(dias3) + " " + str(dias4) + " dias"
+            name = "Pago " + str(dias) + " - " + str(dias2) + " - " + str(dias3) + " - " + str(dias4) + " dias"
             terms = Term.search([('name','=', name)])
 
             divisor = Decimal(str(round(100/percentage, 8)))
             if terms:
-                pass
+                for t in terms:
+                    term = t
             else:
                 term = Term()
                 term.name = name
@@ -160,7 +165,6 @@ class Purchase():
 
                 term.lines = lines
                 term.save()
-
 
         self.payment_term = term
         self.save()
